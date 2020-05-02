@@ -1,1 +1,128 @@
-<p>user-profile works!</p>
+<div class="container">
+  <form [formGroup]="userProfileForm" (ngSubmit)="submit()">
+    <div class="row">
+      <div class="col-md-4">
+        <label>Firstname</label>
+      </div>
+      <input
+        type="text"
+        formControlName="firstName"
+        class="formControl"
+        placeholder="firstname"
+      />
+    </div>
+  </form>
+  <form [formGroup]="userProfileForm" (ngSubmit)="submit()">
+    <div class="row">
+      <div class="col-md-4">
+        <label>Lastname</label>
+      </div>
+      <input
+        type="text"
+        formControlName="lastName"
+        class="formControl"
+        placeholder="lastname"
+      />
+    </div>
+  </form>
+  <form [formGroup]="userProfileForm" (ngSubmit)="submit()">
+    <div class="row">
+      <div class="col-md-4">
+        <label>DOB</label>
+      </div>
+      <input
+        type="text"
+        formControlName="dob"
+        class="formControl"
+        placeholder="dob"
+      />
+    </div>
+  </form>
+  <form [formGroup]="userProfileForm" (ngSubmit)="submit()">
+    <div class="row">
+      <div class="col-md-4">
+        <label>Home address</label>
+      </div>
+      <input
+        type="text"
+        formControlName="homeAddress"
+        class="formControl"
+        placeholder="Home Address"
+      />
+    </div>
+  </form>
+  <form [formGroup]="userProfileForm" (ngSubmit)="submit()">
+    <div class="row">
+      <div class="col-md-4">
+        <label>Favorite Food</label>
+      </div>
+      <input
+        type="text"
+        formControlName="favoriteFood"
+        class="formControl"
+        placeholder="Favorite Food"
+      />
+    </div>
+  </form>
+  <form [formGroup]="userProfileForm" (ngSubmit)="submit()">
+    <div class="row">
+      <div class="col-md-4">
+        <label>Favorite Movie</label>
+      </div>
+      <input
+        type="text"
+        formControlName="favoriteMovie"
+        class="formControl"
+        placeholder="Favorite Movie"
+      />
+    </div>
+  </form>
+  <form [formGroup]="userProfileForm" (ngSubmit)="submit()">
+    <div class="row">
+      <div class="input-append">
+        <label>Favorite Artist</label>
+      </div>
+      <input
+        type="text"
+        formControlName="favoriteArtist"
+        class="formControl"
+        placeholder="Favorite Artist"
+      />
+    </div>
+  </form>
+
+  <form [formGroup]="userProfileForm" (ngSubmit)="submit()">
+    <div class="row">
+      <div class="form-horizontal">
+        <label>Hobbies</label>
+      </div>
+      <input
+        type="text"
+        formControlName="hobbies"
+        class="formControl"
+        placeholder="Hobbies"
+      />
+    </div>
+    <div class="row">
+      <div class="col-md-4 text center"></div>
+    </div>
+    <div class="row">
+      <div class="col-md-4 text center">
+        <button
+          class="btn btn-primary btn-warning"
+          type="submit"
+          [disabled]="!userProfileForm.valid"
+        >
+          Edit
+        </button>
+        <button
+          class="btn btn-primary"
+          type="submit"
+          [disabled]="!userProfileForm.valid"
+        >
+          Save
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
