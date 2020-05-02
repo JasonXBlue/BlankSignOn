@@ -2,7 +2,7 @@
   <form [formGroup]="userProfileForm" (ngSubmit)="submit()">
     <div class="row">
       <div class="col-md-4">
-        <label>Firstname</label>
+        <label>First name</label>
       </div>
       <input
         type="text"
@@ -15,7 +15,7 @@
   <form [formGroup]="userProfileForm" (ngSubmit)="submit()">
     <div class="row">
       <div class="col-md-4">
-        <label>Lastname</label>
+        <label>Last name</label>
       </div>
       <input
         type="text"
@@ -28,13 +28,13 @@
   <form [formGroup]="userProfileForm" (ngSubmit)="submit()">
     <div class="row">
       <div class="col-md-4">
-        <label>DOB</label>
+        <label>Date of birth</label>
       </div>
       <input
         type="text"
         formControlName="dob"
         class="formControl"
-        placeholder="dob"
+        placeholder="Date of birth"
       />
     </div>
   </form>
@@ -79,7 +79,7 @@
   </form>
   <form [formGroup]="userProfileForm" (ngSubmit)="submit()">
     <div class="row">
-      <div class="input-append">
+      <div class="col-md-4">
         <label>Favorite Artist</label>
       </div>
       <input
@@ -93,7 +93,7 @@
 
   <form [formGroup]="userProfileForm" (ngSubmit)="submit()">
     <div class="row">
-      <div class="form-horizontal">
+      <div class="col-md-4">
         <label>Hobbies</label>
       </div>
       <input
@@ -103,10 +103,9 @@
         placeholder="Hobbies"
       />
     </div>
-    <div class="row">
-      <div class="col-md-4 text center"></div>
-    </div>
-    <div class="row">
+  </form>
+  <form [formGroup]="userProfileForm">
+    <div class="text-center">
       <div class="col-md-4 text center">
         <button
           class="btn btn-primary btn-warning"
