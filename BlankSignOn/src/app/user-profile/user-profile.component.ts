@@ -12,6 +12,7 @@ import {
   styleUrls: ['./user-profile.component.css'],
 })
 export class UserProfileComponent implements OnInit {
+  userProfile: any;
   userProfileForm: FormGroup;
   constructor(private formBuilder: FormBuilder) {
     this.userProfileForm = this.formBuilder.group({
@@ -41,6 +42,10 @@ export class UserProfileComponent implements OnInit {
   ngOnInit(): void {}
 
   submit() {
+    this.userProfile = this.userProfileForm;
+    console.log(this.userProfileForm.value);
+  }
+  edit() {
     console.log(this.userProfileForm.value);
   }
 }
