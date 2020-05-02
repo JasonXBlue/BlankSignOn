@@ -1,1 +1,39 @@
-<p>login works!</p>
+<div class="container text-center" style="max-width: 300px; margin: auto;">
+  <form [formGroup]="loginForm" class="form-signin" (ngSubmit)="submit()">
+    <h1>Please Login</h1>
+    <label for="inputEmail" class="sr-only">Email Address</label>
+    <input
+      type="email"
+      id="inputEmail"
+      class="form-control"
+      formControlName="inputEmail"
+      placeholder="Email Address"
+    />
+    <label
+      class="alert alert-danger"
+      *ngIf="
+        !this.loginForm.controls.inputEmail.valid &&
+        this.loginForm.controls.inputEmail.touched
+      "
+      >Email Address Required</label
+    >
+    <label for="inputPassword" class="sr-only">Password</label>
+    <input
+      type="password"
+      id="inputPassword"
+      class="form-control"
+      formControlName="inputPassword"
+      placeholder="Password"
+    />
+    <label class="alert alert-danger" *ngIf="passwordValid"
+      >Password is Required</label
+    >
+    <button
+      class="btn btn-lg btn-primary btn-block"
+      type="submit"
+      [disabled]="!loginForm.valid"
+    >
+      Login
+    </button>
+  </form>
+</div>
