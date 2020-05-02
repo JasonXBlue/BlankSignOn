@@ -7,9 +7,10 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RegistrationComponent } from './registration/registration.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, UserProfileComponent],
+  declarations: [AppComponent, LoginComponent, UserProfileComponent, RegistrationComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
