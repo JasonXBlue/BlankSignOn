@@ -1,5 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import {
+  FormGroup,
+  FormBuilder,
+  Validators,
+  FormControl,
+} from '@angular/forms';
+import { AuthService } from '../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -8,14 +15,21 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
+  loginValid = true;
+  inputPassword: FormControl;
 
   get passwordValid(): boolean {
-    return (
-      !this.loginForm.controls.inputPassword.valid &&
-      this.loginForm.controls.inputPassword.touched
-    );
+    return !this.inputPassword.valid && this.inputPassword.touched;
   }
-  constructor(private formBuilder: FormBuilder) {
+  constructor(
+    private formBuilder: FormBuilder,
+    private authService: AuthService,
+    private router: Router
+  ) {
+    this.inputPassword = this.formBuilder.control(
+      '',
+      Validators.compose([Validators.required, Validators.maxLength(30)])
+    );
     this.loginForm = this.formBuilder.group({
       inputEmail: [
         '',
@@ -25,16 +39,20 @@ export class LoginComponent implements OnInit {
           Validators.maxLength(100),
         ]),
       ],
-      inputPassword: [
-        '',
-        Validators.compose([Validators.required, Validators.maxLength(30)]),
-      ],
+      inputPassword: this.inputPassword,
     });
   }
 
   ngOnInit(): void {}
 
   submit() {
-    console.log(this.loginForm);
+    this.loginValid = this.authService.login(
+      this.loginForm.controls.inputEmail.value,
+      this.loginForm.controls.inputPassword.value
+    );
+
+    if (this.loginValid) {
+      this.router.navigate(['/userprofile']);
+    }
   }
 }
