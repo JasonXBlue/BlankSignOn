@@ -1,8 +1,11 @@
+<mat-card style="text-align: center;" class="mat-display-1"
+  >User Profile</mat-card
+>
 <div class="container">
   <form [formGroup]="userProfileForm" (ngSubmit)="submit()">
     <div class="row">
       <div class="col-md-4">
-        <label>First name</label>
+        <label>First name:</label>
       </div>
       <input
         type="text"
@@ -15,7 +18,7 @@
   <form [formGroup]="userProfileForm" (ngSubmit)="submit()">
     <div class="row">
       <div class="col-md-4">
-        <label>Last name</label>
+        <label>Last name:</label>
       </div>
       <input
         type="text"
@@ -28,7 +31,7 @@
   <form [formGroup]="userProfileForm" (ngSubmit)="submit()">
     <div class="row">
       <div class="col-md-4">
-        <label>Date of birth</label>
+        <label>Date of birth:</label>
       </div>
       <input
         type="text"
@@ -41,7 +44,7 @@
   <form [formGroup]="userProfileForm" (ngSubmit)="submit()">
     <div class="row">
       <div class="col-md-4">
-        <label>Home address</label>
+        <label>Home address:</label>
       </div>
       <input
         type="text"
@@ -54,7 +57,7 @@
   <form [formGroup]="userProfileForm" (ngSubmit)="submit()">
     <div class="row">
       <div class="col-md-4">
-        <label>Favorite Food</label>
+        <label>Favorite Food:</label>
       </div>
       <input
         type="text"
@@ -67,7 +70,7 @@
   <form [formGroup]="userProfileForm" (ngSubmit)="submit()">
     <div class="row">
       <div class="col-md-4">
-        <label>Favorite Movie</label>
+        <label>Favorite Movie:</label>
       </div>
       <input
         type="text"
@@ -80,7 +83,7 @@
   <form [formGroup]="userProfileForm" (ngSubmit)="submit()">
     <div class="row">
       <div class="col-md-4">
-        <label>Favorite Artist</label>
+        <label>Favorite Artist:</label>
       </div>
       <input
         type="text"
@@ -94,7 +97,7 @@
   <form [formGroup]="userProfileForm" (ngSubmit)="submit()">
     <div class="row">
       <div class="col-md-4">
-        <label>Hobbies</label>
+        <label>Hobbies:</label>
       </div>
       <input
         type="text"
@@ -106,6 +109,7 @@
     <div class="text-center">
       <div class="col-md-4 text center">
         <button
+          (click)="editProfile()"
           class="btn btn-primary btn-warning"
           type="submit"
           [disabled]="!userProfileForm.valid"

@@ -7,12 +7,12 @@ import { RegistrationComponent } from './registration/registration.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
-  // {
-  //   path: 'userprofile',
-  //   component: UserProfileComponent,
-  //   canActivate: [AuthGuard],
-  // },
-  { path: 'userprofile', component: UserProfileComponent },
+  {
+    path: 'userprofile',
+    component: UserProfileComponent,
+    canActivate: [AuthGuard],
+  },
+  // { path: 'userprofile', component: UserProfileComponent },
   { path: 'registration', component: RegistrationComponent },
   { path: '**', redirectTo: 'login', pathMatch: 'full' },
 ];

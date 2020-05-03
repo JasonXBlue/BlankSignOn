@@ -45,7 +45,12 @@ export class UserProfileComponent implements OnInit {
     this.userProfile = this.userProfileForm;
     console.log(this.userProfileForm.value);
   }
-  edit() {
-    console.log(this.userProfileForm.value);
+  editProfile() {
+    this.userProfileForm.patchValue({
+      firstName: 'Nancy',
+      homeAddress: ' 123 Drew Street',
+      favoriteFood: 'tacos',
+      favoriteArtist: 'Metallica',
+    });
   }
 }
