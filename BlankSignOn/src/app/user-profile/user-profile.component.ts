@@ -44,6 +44,28 @@ export class UserProfileComponent implements OnInit {
   submit() {
     this.userProfile = this.userProfileForm;
     console.log(this.userProfileForm.value);
+
+    this.userProfileForm.get('firstName').disable();
+    this.userProfileForm.get('lastName').disable();
+    this.userProfileForm.get('dob').disable();
+    this.userProfileForm.get('homeAddress').disable();
+    this.userProfileForm.get('favoriteFood').disable();
+    this.userProfileForm.get('favoriteMovie').disable();
+    this.userProfileForm.get('favoriteArtist').disable();
+    this.userProfileForm.get('hobbies').disable();
+
+    // this.userProfileForm
+    //   .get([
+    //     'firstName',
+    //     'lastName',
+    //     'dob',
+    //     'homeAddress',
+    //     'favoriteFood',
+    //     'favoriteMovie',
+    //     'favoriteArtist',
+    //     'hobbies',
+    //   ])
+    //   .disable();
   }
   editProfile() {
     this.userProfileForm.patchValue({
